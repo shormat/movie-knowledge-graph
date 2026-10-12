@@ -23,6 +23,7 @@ Resources: `http://ceribouchetiflor.be/resource/{Person|Show|Character|Genre}/{i
 - [Make targets](#make-targets)
 - [Services and URLs](#services-and-urls)
 - [Troubleshooting](#troubleshooting)
+- [Authors](#authors)
 - [Credits](#credits)
 
 ---
@@ -350,6 +351,13 @@ LIMIT 10
   restarted by `make run` (`sudo /opt/lampp/lampp status`).
 - **Port already in use** – the stack uses 80, 3030, 6942, 8080, 8081, 8890 and
   4269–4271.
+
+---
+
+## Authors
+
+- [@shormat](https://github.com/shormat)
+- [@CorentinXM](https://github.com/CorentinXM)
 
 ---
 
