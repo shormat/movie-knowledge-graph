@@ -1,0 +1,449 @@
+<http://ceribouchetiflor.be/ontology#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://ceribouchetiflor.be/ontology#actedIn
+<http://ceribouchetiflor.be/ontology#actedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#actedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#actedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Actor> .
+<http://ceribouchetiflor.be/ontology#actedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person acted in a movie" .
+<http://ceribouchetiflor.be/ontology#actedIn> <http://www.w3.org/2000/01/rdf-schema#label> "actedIn" .
+# 
+# http://ceribouchetiflor.be/ontology#appearsIn
+<http://ceribouchetiflor.be/ontology#appearsIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#appearsIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Character> .
+<http://ceribouchetiflor.be/ontology#appearsIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#appearsIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a character to a show that it appears in." .
+<http://ceribouchetiflor.be/ontology#appearsIn> <http://www.w3.org/2000/01/rdf-schema#label> "appearsIn" .
+# 
+# http://ceribouchetiflor.be/ontology#composedFor
+<http://ceribouchetiflor.be/ontology#composedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#composedFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#composedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Composer> .
+<http://ceribouchetiflor.be/ontology#composedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person composed for some title" .
+<http://ceribouchetiflor.be/ontology#composedFor> <http://www.w3.org/2000/01/rdf-schema#label> "composedFor" .
+# 
+# http://ceribouchetiflor.be/ontology#directed
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/2002/07/owl#inverseOf> <http://ceribouchetiflor.be/ontology#directedBy> .
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Director> .
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person directed some title" .
+<http://ceribouchetiflor.be/ontology#directed> <http://www.w3.org/2000/01/rdf-schema#label> "directed" .
+# 
+# http://ceribouchetiflor.be/ontology#directedBy
+<http://ceribouchetiflor.be/ontology#directedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#directedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#employed> .
+<http://ceribouchetiflor.be/ontology#directedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person directed some movie" .
+<http://ceribouchetiflor.be/ontology#directedBy> <http://www.w3.org/2000/01/rdf-schema#label> "directed by" .
+# 
+# http://ceribouchetiflor.be/ontology#edited
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/2002/07/owl#inverseOf> <http://ceribouchetiflor.be/ontology#editedBy> .
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#editor> .
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person edited some title" .
+<http://ceribouchetiflor.be/ontology#edited> <http://www.w3.org/2000/01/rdf-schema#label> "edited" .
+# 
+# http://ceribouchetiflor.be/ontology#editedBy
+<http://ceribouchetiflor.be/ontology#editedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#editedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#employed> .
+<http://ceribouchetiflor.be/ontology#editedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person edited some movie" .
+<http://ceribouchetiflor.be/ontology#editedBy> <http://www.w3.org/2000/01/rdf-schema#label> "editedBy" .
+# 
+# http://ceribouchetiflor.be/ontology#employed
+<http://ceribouchetiflor.be/ontology#employed> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#employed> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://ceribouchetiflor.be/ontology#employed> <http://www.w3.org/2002/07/owl#inverseOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#employed> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a movie employed a Person" .
+<http://ceribouchetiflor.be/ontology#employed> <http://www.w3.org/2000/01/rdf-schema#label> "employed" .
+# 
+# http://ceribouchetiflor.be/ontology#episodeOf
+<http://ceribouchetiflor.be/ontology#episodeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#episodeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Episode> .
+<http://ceribouchetiflor.be/ontology#episodeOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Serie> .
+<http://ceribouchetiflor.be/ontology#episodeOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that an episode is part of a serie" .
+<http://ceribouchetiflor.be/ontology#episodeOf> <http://www.w3.org/2000/01/rdf-schema#label> "episodeOf" .
+# 
+# http://ceribouchetiflor.be/ontology#hasGenre
+<http://ceribouchetiflor.be/ontology#hasGenre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#hasGenre> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#hasGenre> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Genre> .
+<http://ceribouchetiflor.be/ontology#hasGenre> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a movie has some genre" .
+<http://ceribouchetiflor.be/ontology#hasGenre> <http://www.w3.org/2000/01/rdf-schema#label> "hasGenre" .
+# 
+# http://ceribouchetiflor.be/ontology#knownFor
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person is known for some title" .
+<http://ceribouchetiflor.be/ontology#knownFor> <http://www.w3.org/2000/01/rdf-schema#label> "knownFor" .
+# 
+# http://ceribouchetiflor.be/ontology#knows
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#IrreflexiveProperty> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/2000/01/rdf-schema#comment> "to recognize someone or something" .
+<http://ceribouchetiflor.be/ontology#knows> <http://www.w3.org/2000/01/rdf-schema#label> "knows" .
+# 
+# http://ceribouchetiflor.be/ontology#played
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/2002/07/owl#inverseOf> <http://ceribouchetiflor.be/ontology#playedBy> .
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Character> .
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person played some character" .
+<http://ceribouchetiflor.be/ontology#played> <http://www.w3.org/2000/01/rdf-schema#label> "playedCharacter" .
+# 
+# http://ceribouchetiflor.be/ontology#playedBy
+<http://ceribouchetiflor.be/ontology#playedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#playedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Character> .
+<http://ceribouchetiflor.be/ontology#playedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#playedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a character is played by a person" .
+<http://ceribouchetiflor.be/ontology#playedBy> <http://www.w3.org/2000/01/rdf-schema#label> "playedBy" .
+# 
+# http://ceribouchetiflor.be/ontology#workedFor
+<http://ceribouchetiflor.be/ontology#workedFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#workedFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#workedFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#workedFor> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person worked for a movie" .
+<http://ceribouchetiflor.be/ontology#workedFor> <http://www.w3.org/2000/01/rdf-schema#label> "worked for" .
+# 
+# http://ceribouchetiflor.be/ontology#workedWith
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#knows> .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/2000/01/rdf-schema#range> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person worked with another person" .
+<http://ceribouchetiflor.be/ontology#workedWith> <http://www.w3.org/2000/01/rdf-schema#label> "workedWith" .
+# 
+# http://ceribouchetiflor.be/ontology#writtenBy
+<http://ceribouchetiflor.be/ontology#writtenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#writtenBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#employed> .
+<http://ceribouchetiflor.be/ontology#writtenBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://ceribouchetiflor.be/ontology#wrote> .
+<http://ceribouchetiflor.be/ontology#writtenBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person wrote some movie" .
+<http://ceribouchetiflor.be/ontology#writtenBy> <http://www.w3.org/2000/01/rdf-schema#label> "writtenBy" .
+# 
+# http://ceribouchetiflor.be/ontology#wrote
+<http://ceribouchetiflor.be/ontology#wrote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ceribouchetiflor.be/ontology#wrote> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ceribouchetiflor.be/ontology#workedFor> .
+<http://ceribouchetiflor.be/ontology#wrote> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Writer> .
+<http://ceribouchetiflor.be/ontology#wrote> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a person wrote some title" .
+<http://ceribouchetiflor.be/ontology#wrote> <http://www.w3.org/2000/01/rdf-schema#label> "wrote" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://ceribouchetiflor.be/ontology#BirthYear
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The Birthyear of a person" .
+<http://ceribouchetiflor.be/ontology#BirthYear> <http://www.w3.org/2000/01/rdf-schema#label> "BirthYear" .
+# 
+# http://ceribouchetiflor.be/ontology#DeathYear
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/2000/01/rdf-schema#comment> "The deathyear of a person" .
+<http://ceribouchetiflor.be/ontology#DeathYear> <http://www.w3.org/2000/01/rdf-schema#label> "DeathYear" .
+# 
+# http://ceribouchetiflor.be/ontology#averageRating
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/2000/01/rdf-schema#comment> "the average rating of the title" .
+<http://ceribouchetiflor.be/ontology#averageRating> <http://www.w3.org/2000/01/rdf-schema#label> "averageRating" .
+# 
+# http://ceribouchetiflor.be/ontology#category
+<http://ceribouchetiflor.be/ontology#category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#category> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Character> .
+<http://ceribouchetiflor.be/ontology#category> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ceribouchetiflor.be/ontology#category> <http://www.w3.org/2000/01/rdf-schema#comment> "the category of a character" .
+<http://ceribouchetiflor.be/ontology#category> <http://www.w3.org/2000/01/rdf-schema#label> "category" .
+# 
+# http://ceribouchetiflor.be/ontology#endedOn
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "the year the title ended on" .
+<http://ceribouchetiflor.be/ontology#endedOn> <http://www.w3.org/2000/01/rdf-schema#label> "endedOn" .
+# 
+# http://ceribouchetiflor.be/ontology#episodeNumber
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Episode> .
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "the number of the episode in the serie" .
+<http://ceribouchetiflor.be/ontology#episodeNumber> <http://www.w3.org/2000/01/rdf-schema#label> "episodeNumber" .
+# 
+# http://ceribouchetiflor.be/ontology#isAdult
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/2000/01/rdf-schema#comment> "if the serie is a serie for adults or not" .
+<http://ceribouchetiflor.be/ontology#isAdult> <http://www.w3.org/2000/01/rdf-schema#label> "isAdult" .
+# 
+# http://ceribouchetiflor.be/ontology#name
+<http://ceribouchetiflor.be/ontology#name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#name> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#name> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://ceribouchetiflor.be/ontology#name> <http://www.w3.org/2000/01/rdf-schema#comment> "the name of someone or something" .
+<http://ceribouchetiflor.be/ontology#name> <http://www.w3.org/2000/01/rdf-schema#label> "name" .
+# 
+# http://ceribouchetiflor.be/ontology#numberOfVotes
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/2000/01/rdf-schema#comment> "the number of imdb votes of the title" .
+<http://ceribouchetiflor.be/ontology#numberOfVotes> <http://www.w3.org/2000/01/rdf-schema#label> "numberOfVotes" .
+# 
+# http://ceribouchetiflor.be/ontology#runtimeMinutes
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/2000/01/rdf-schema#comment> "the number of minutes the serie was running" .
+<http://ceribouchetiflor.be/ontology#runtimeMinutes> <http://www.w3.org/2000/01/rdf-schema#label> "runtimeMinutes" .
+# 
+# http://ceribouchetiflor.be/ontology#seasonNumber
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Episode> .
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/2000/01/rdf-schema#comment> "the number of the episode in the serie" .
+<http://ceribouchetiflor.be/ontology#seasonNumber> <http://www.w3.org/2000/01/rdf-schema#label> "seasonNumber" .
+# 
+# http://ceribouchetiflor.be/ontology#startedOn
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topDataProperty> .
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/2000/01/rdf-schema#comment> "The date the serie started on" .
+<http://ceribouchetiflor.be/ontology#startedOn> <http://www.w3.org/2000/01/rdf-schema#label> "startedOn" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ceribouchetiflor.be/ontology#Actor
+<http://ceribouchetiflor.be/ontology#Actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Actor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid1 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Character> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#played> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#actedIn> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://ceribouchetiflor.be/ontology#Actor> <http://www.w3.org/2000/01/rdf-schema#comment> "someone who pretends to be someone else while performing in a film, play, or television or radio programme" .
+<http://ceribouchetiflor.be/ontology#Actor> <http://www.w3.org/2000/01/rdf-schema#label> "Actor" .
+# 
+# http://ceribouchetiflor.be/ontology#Character
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid6 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Person> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#playedBy> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#appearsIn> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#category> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#name> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Genre> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Profession> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2000/01/rdf-schema#comment> "a person represented in a film, play, or story:" .
+<http://ceribouchetiflor.be/ontology#Character> <http://www.w3.org/2000/01/rdf-schema#label> "character" .
+# 
+# http://ceribouchetiflor.be/ontology#Composer
+<http://ceribouchetiflor.be/ontology#Composer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Composer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Composer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#composedFor> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Composer> <http://www.w3.org/2000/01/rdf-schema#comment> "a person whose job is to arrange the letters, words, sentences, etc. of a book or a magazine before it is printed" .
+<http://ceribouchetiflor.be/ontology#Composer> <http://www.w3.org/2000/01/rdf-schema#label> "Composer" .
+# 
+# http://ceribouchetiflor.be/ontology#Director
+<http://ceribouchetiflor.be/ontology#Director> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Director> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Director> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#directed> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Director> <http://www.w3.org/2000/01/rdf-schema#comment> "a person who is in charge of a film or play and tells the actors how to play their parts" .
+<http://ceribouchetiflor.be/ontology#Director> <http://www.w3.org/2000/01/rdf-schema#label> "Director" .
+# 
+# http://ceribouchetiflor.be/ontology#Episode
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Serie> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#episodeOf> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Movie> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Serie> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#ShortFilm> .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2000/01/rdf-schema#comment> "one of the single parts into which a story is divided, especially when it is broadcast on the television or radio" .
+<http://ceribouchetiflor.be/ontology#Episode> <http://www.w3.org/2000/01/rdf-schema#label> "Episode" .
+# 
+# http://ceribouchetiflor.be/ontology#Genre
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Profession> .
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/2000/01/rdf-schema#comment> "a particular subject or style of literature, art, or music" .
+<http://ceribouchetiflor.be/ontology#Genre> <http://www.w3.org/2000/01/rdf-schema#label> "Genre" .
+# 
+# http://ceribouchetiflor.be/ontology#Movie
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Serie> .
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#ShortFilm> .
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/2000/01/rdf-schema#comment> "a film shown in a cinema or on television and often telling a story" .
+<http://ceribouchetiflor.be/ontology#Movie> <http://www.w3.org/2000/01/rdf-schema#label> "Movie" .
+# 
+# http://ceribouchetiflor.be/ontology#Person
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#workedFor> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#BirthYear> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#DeathYear> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#name> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Profession> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "a person that was involved into any type of movie" .
+<http://ceribouchetiflor.be/ontology#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person" .
+# 
+# http://ceribouchetiflor.be/ontology#Profession
+<http://ceribouchetiflor.be/ontology#Profession> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Profession> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Profession> <http://www.w3.org/2000/01/rdf-schema#comment> "The profession that a person made for a movie" .
+<http://ceribouchetiflor.be/ontology#Profession> <http://www.w3.org/2000/01/rdf-schema#label> "Profession" .
+# 
+# http://ceribouchetiflor.be/ontology#Serie
+<http://ceribouchetiflor.be/ontology#Serie> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Serie> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#Serie> <http://www.w3.org/2002/07/owl#disjointWith> <http://ceribouchetiflor.be/ontology#ShortFilm> .
+<http://ceribouchetiflor.be/ontology#Serie> <http://www.w3.org/2000/01/rdf-schema#comment> "a set of television or radio broadcasts (titles) on the same subject or using the same characters but in different situations" .
+<http://ceribouchetiflor.be/ontology#Serie> <http://www.w3.org/2000/01/rdf-schema#label> "Serie" .
+# 
+# http://ceribouchetiflor.be/ontology#ShortFilm
+<http://ceribouchetiflor.be/ontology#ShortFilm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#ShortFilm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Show> .
+<http://ceribouchetiflor.be/ontology#ShortFilm> <http://www.w3.org/2000/01/rdf-schema#comment> "a film that is not long enough to be considered a feature film" .
+<http://ceribouchetiflor.be/ontology#ShortFilm> <http://www.w3.org/2000/01/rdf-schema#label> "Short film" .
+# 
+# http://ceribouchetiflor.be/ontology#Show
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Genre> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#hasGenre> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#averageRating> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#isAdult> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#numberOfVotes> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#runtimeMinutes> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#startedOn> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#comment> "A thing that is displayed on the cinema/tv/streaming platform" .
+<http://ceribouchetiflor.be/ontology#Show> <http://www.w3.org/2000/01/rdf-schema#label> "Show" .
+# 
+# http://ceribouchetiflor.be/ontology#Writer
+<http://ceribouchetiflor.be/ontology#Writer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#Writer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#Writer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#wrote> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#Writer> <http://www.w3.org/2000/01/rdf-schema#comment> "A person who writes articles, books, films etc., to be published" .
+<http://ceribouchetiflor.be/ontology#Writer> <http://www.w3.org/2000/01/rdf-schema#label> "Writer" .
+# 
+# http://ceribouchetiflor.be/ontology#editor
+<http://ceribouchetiflor.be/ontology#editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ceribouchetiflor.be/ontology#editor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ceribouchetiflor.be/ontology#Person> .
+<http://ceribouchetiflor.be/ontology#editor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ceribouchetiflor.be/ontology#Show> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://ceribouchetiflor.be/ontology#edited> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://ceribouchetiflor.be/ontology#editor> <http://www.w3.org/2000/01/rdf-schema#comment> "a person who corrects and make changes to texts or films before they are printed or shown, or a person who is in charge of a newspaper, magazine, etc., and is responsible for all of its reports" .
+<http://ceribouchetiflor.be/ontology#editor> <http://www.w3.org/2000/01/rdf-schema#label> "Editor" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,212 @@
+@base <http://ceribouchetiflor.be/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://ceribouchetiflor.be/ontology#> .
+
+
+
+# Define a NodeShape for character
+ex:CharacterShape
+    a   sh:NodeShape ;
+    sh:targetClass  ex:Character ;
+
+    # Must be played by at least one Person or appears in at least one Show
+    sh:or (
+        [
+            sh:path ex:playedBy ;
+            sh:class ex:Person ;
+            sh:minCount 1 ;
+        ]
+        [
+            sh:path ex:appearsIn ;
+            sh:class ex:Show ;
+            sh:minCount 1 ;
+        ]
+    ) ;
+
+    # Must hav a Category 
+    sh:property [
+        sh:path ex:category ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Must have a Name
+    sh:property [
+        sh:path ex:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Must be disjoint with Genre, Person, Profession, and Show
+    sh:not [
+        sh:class ex:Genre ;
+    ] ;
+    sh:not [
+        sh:class ex:Person ;
+    ] ;
+    sh:not [
+        sh:class ex:Profession ;
+    ] ;
+    sh:not [
+        sh:class ex:Show ;
+    ] .
+
+# Define a NodeShape for Genre
+ex:GenreShape
+    a sh:NodeShape ;
+
+    # Must be disjoint with Person, Profession, and Show
+    sh:not [
+        sh:class ex:Person ;
+    ] ;
+    sh:not [
+        sh:class ex:Profession ;
+    ] ;
+    sh:not [
+        sh:class ex:Show ;
+    ] .
+
+# Define a NodeShape for Person
+ex:PersonShape
+    a sh:NodeShape ;
+
+    sh:property [
+        sh:path ex:workedFor ;
+        sh:class ex:Show ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ex:BirthYear ;
+        sh:datatype xsd:integer ;
+        sh:minExclusive 0 ;
+    ] ;
+
+    sh:or (
+        # Either the person is alive (no DeathYear) or they are dead (DeathYear present)
+        [ sh:not [
+            sh:property [
+                sh:path ex:DeathYear ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                ] ;
+            ]
+        ]
+        # If the person is dead, it has only one death year and it is greater than or equal to the birth year
+        [ sh:and (
+            [ sh:property [
+                sh:path ex:DeathYear ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                ] 
+            ]
+
+            [ sh:property [
+                sh:path ex:BirthYear ;
+                sh:lessThanOrEquals ex:DeathYear ;
+                ]
+            ]
+            )
+        ]
+    ) ;
+
+    sh:property [
+        sh:path ex:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Must be disjoint with Profession and Show
+    sh:not [
+        sh:class ex:Profession ;
+    ] ;
+    sh:not [
+        sh:class ex:Show ;
+    ] .
+    
+ex:ProfessionShape
+    a sh:NodeShape ;
+
+    sh:property [
+        sh:path ex:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+    ] ;
+
+    # Must be disjoint with Show
+    sh:not [
+        sh:class ex:Show ;
+    ] .
+    
+ex:ShowShape
+    a sh:NodeShape ;
+
+    sh:property [
+        sh:path ex:hasGenre ;
+        sh:class ex:Genre ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ex:averageRating ;  
+        sh:datatype xsd:decimal ;
+        sh:minExclusive 0 ;
+        sh:maxExclusive 10 ;
+    ] ;
+
+    sh:property [
+        sh:path ex:isAdult ;
+        sh:datatype xsd:integer ;
+        sh:in (0 1) ;
+    ] ;
+    
+    sh:property [
+        sh:path ex:numberOfVotes ;
+        sh:datatype xsd:nonNegativeInteger ;
+    ] ;
+
+    sh:property [
+        sh:path ex:runtimeMinutes ;
+        sh:datatype xsd:nonNegativeInteger ;
+    ] ;
+    
+    sh:property [
+        sh:path ex:startedOn ;
+        sh:datatype xsd:integer ;
+    ] ;
+    
+    # if we have an averageRating, we must have a numberOfVotes
+    sh:or (
+      # no averageRating
+      [
+        sh:not [
+          sh:property [
+            sh:path     ex:averageRating ;
+            sh:minCount 1 ;
+          ]
+        ]
+      ]
+      # we have anumberOfVotes
+      [
+        sh:property [
+          sh:path     ex:numberOfVotes ;
+          sh:minCount 1 ;
+        ]
+      ]
+    ) .
+
+ex:ShortFilmShape
+    a sh:NodeShape ;
+
+    sh:targetClass ex:ShortFilm;
+
+    sh:property [
+        sh:path ex:runtimeMinutes ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:maxInclusive    "15"^^xsd:nonNegativeInteger ;
+    ] .

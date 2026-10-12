@@ -1,0 +1,25 @@
+# Third-party tools (Fuseki, Jetty, Virtuoso, RMLMapper, ROBOT, Widoco, XAMPP...)
+# Downloaded by `make setup` / scripts/setup.sh — never committed.
+/tools/
+
+# Fuseki runtime state (only the dataset configuration is versioned)
+/fuseki/*
+!/fuseki/configuration/
+
+# Generated files
+/ontology/krr_QL_expanded.ttl
+/logs/
+*.log
+hs_err_pid*.log
+
+# Python
+krrVenv/
+.venv/
+venv/
+__pycache__/
+
+# OS / editors
+.DS_Store
+*:Zone.Identifier
+.idea/
+.vscode/

@@ -1,0 +1,458 @@
+@prefix movi: <http://ceribouchetiflor.be/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ceribouchetiflor.be/ontology#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+
+<#DB_source> a d2rq:Database ;
+    d2rq:jdbcDriver "com.mysql.jdbc.Driver" ;
+    d2rq:jdbcDSN "jdbc:mysql://localhost:4269/ceribou-chetiflor" ;
+    d2rq:username "root" ;
+    d2rq:password "root" ;
+.
+
+<#Person>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.* , known_for.title_id FROM person JOIN known_for ON person.n_const = known_for.n_const" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:name ;
+        rr:objectMap [ rml:reference "primaryName" ; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:BirthYear ;
+        rr:objectMap [ rml:reference "birthYear" ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:DeathYear ;
+        rr:objectMap [ rml:reference "deathYear"  ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:knownFor ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Show> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+<#Actor>
+   a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, principal.title_id FROM person JOIN principal ON person.n_const = principal.n_const WHERE principal.category = 'actor'" ;
+    ] ;
+   rr:subjectMap [
+       rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+   ] ;
+   rr:predicateObjectMap [
+       rr:predicate movi:actedIn ;
+       rr:objectMap [
+           rr:parentTriplesMap <#Show> ;
+              rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+              ] ;
+         ] ;
+    ] ;
+.
+
+<#Compositor>
+   a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, principal.title_id FROM person JOIN principal ON person.n_const = principal.n_const WHERE principal.category = 'composer'" ;
+    ] ;
+   rr:subjectMap [
+       rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+   ] ;
+   rr:predicateObjectMap [
+       rr:predicate movi:composedFor ;
+       rr:objectMap [
+           rr:parentTriplesMap <#Show> ;
+              rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+              ] ;
+         ] ;
+    ] ;
+.
+
+<#Editor>
+   a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, principal.title_id FROM person JOIN principal ON person.n_const = principal.n_const WHERE principal.category = 'editor'" ;
+    ] ;
+   rr:subjectMap [
+       rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+   ] ;
+   rr:predicateObjectMap [
+       rr:predicate movi:edited ;
+       rr:objectMap [
+           rr:parentTriplesMap <#Show> ;
+              rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+              ] ;
+         ] ;
+    ] ;
+.
+
+<#Director>
+   a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, directed.title_id FROM person JOIN directed ON person.n_const = directed.n_const" ;
+    ] ;
+    rr:subjectMap [
+         rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:directed ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Show> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+<#Writer>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, wrote.title_id FROM person JOIN wrote ON person.n_const = wrote.n_const" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:wrote ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Show> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+
+<#UnlistedJob>
+   a rr:TriplesMap ;
+   rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT person.*, principal.title_id, principal.category FROM person JOIN principal ON person.n_const = principal.n_const WHERE principal.category NOT IN ('actor', 'composer', 'editor', 'writer', 'director')" ;
+    ] ;
+    rr:subjectMap [
+         #Put as person only when the category is not in the list
+         rr:template "http://ceribouchetiflor.be/resource/Person/{n_const}" ;
+         a movi:Person ;
+    ] ;
+    rr:predicateObjectMap [
+        # When the job is not listed, we set workedFor
+        rr:predicate movi:workedFor ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Show> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+
+<#Character>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query """
+            SELECT 
+                p.*, 
+                ch.opaque_id 
+            FROM principal p,
+            (SELECT @row_num := 0) r,
+            (
+                SELECT 
+                    character_name, 
+                    CONCAT('c', (@row_num := @row_num + 1)) as opaque_id
+                FROM (
+                    SELECT DISTINCT character_name
+                    FROM principal
+                    WHERE character_name IS NOT NULL
+                    AND (title_id IS NOT NULL OR n_const IS NOT NULL)
+                    ORDER BY character_name
+                ) distinct_chars
+            ) ch 
+            WHERE p.character_name = ch.character_name
+        """ ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Character/{opaque_id}" ;
+        rr:class movi:Character ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:name ;
+        rr:objectMap [ rml:reference "character_name" ; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:category ;
+        rr:objectMap [ rml:reference "category" ; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:playedBy ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Person> ;
+            rr:joinCondition [
+                rr:child "n_const" ;
+                rr:parent "n_const" ;
+            ] ;
+        ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:appearsIn ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Episode> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:appearsIn ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Serie> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:appearsIn ;
+        rr:objectMap [
+            rr:parentTriplesMap <#ShortFilm> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:appearsIn ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Movie> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+<#Genre>
+    a rr:TriplesMap;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query """
+            SELECT 
+                g.genre_name, 
+                CONCAT('g', (@row_num := IF(@row_num IS NULL, 1, @row_num + 1))) as opaque_id
+            FROM (
+                SELECT DISTINCT genre_name
+                FROM genre
+                WHERE genre_name IS NOT NULL
+                ORDER BY genre_name
+            ) g
+            JOIN (SELECT @row_num := 0) r
+        """ ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Genre/{opaque_id}" ;
+        rr:class movi:Genre ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:name ;
+        rr:objectMap [ rml:reference "genre_name" ; rr:datatype xsd:string ] ;
+    ] ;
+.
+
+
+<#Show>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT * FROM title" ;
+    ] ; 
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ rml:reference "primary_title" ; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:name ;
+        rr:objectMap [ rml:reference "original_title" ; rr:datatype xsd:string ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:startedOn ;
+        rr:objectMap [ rml:reference "start_year"  ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:endedOn ;
+        rr:objectMap [ rml:reference "end_year"  ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:averageRating ;
+        rr:objectMap [ rml:reference "avg_rating" ; rr:datatype xsd:decimal ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:numberOfVotes ;
+        rr:objectMap [ rml:reference "num_votes" ; rr:datatype xsd:nonNegativeInteger ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:isAdult ;
+        rr:objectMap [ rml:reference "is_adult" ; rr:datatype xsd:integer ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:runtimeMinutes ;
+        rr:objectMap [ rml:reference "runtime_minutes" ; rr:datatype xsd:nonNegativeInteger ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:hasGenre ;
+        rr:objectMap [
+            rr:parentTriplesMap <#Genre> ;
+            rr:joinCondition [
+                rr:child "title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+<#Episode>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT title.*, episode.series_title_id, episode.episode_number, episode.season_number FROM title JOIN episode ON title.title_id = episode.title_id" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+        rr:class movi:Episode ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:seasonNumber ;
+        rr:objectMap [ rml:reference "season_number" ; rr:datatype xsd:nonNegativeInteger ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:episodeNumber ;
+        rr:objectMap [ rml:reference "episode_number" ; rr:datatype xsd:nonNegativeInteger ] ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate movi:episodeOf ; 
+        rr:objectMap [
+            rr:parentTriplesMap <#Serie> ;
+            rr:joinCondition [
+                rr:child "series_title_id" ;
+                rr:parent "title_id" ;
+            ] ;
+        ] ;
+    ] ;
+.
+
+<#Serie>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT title.*, episode.series_title_id, episode.episode_number, episode.season_number FROM title JOIN episode ON title.title_id = episode.series_title_id" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+        rr:class movi:Serie ;
+    ] ;
+.
+
+<#ShortFilm>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT * FROM title WHERE runtime_minutes < 16 AND title_id NOT IN (SELECT series_title_id FROM episode) AND title_id NOT IN (SELECT title_id FROM episode)" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+        rr:class movi:ShortFilm ;
+    ] ;
+.
+
+<#Movie>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query "SELECT * FROM title WHERE title_id NOT IN (SELECT series_title_id FROM episode) AND runtime_minutes >= 16 AND title_id NOT IN (SELECT title_id FROM episode)" ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+        rr:class movi:Movie ;
+    ] ;
+.
+
+<#LocalizedTitle>
+    a rr:TriplesMap ;
+    rml:logicalSource [
+        rml:source <#DB_source> ;
+        rml:referenceFormulation ql:SQL ;
+        rml:query """
+        SELECT localized_title.*, title.original_title, title.start_year, LOWER(localized_title.language) AS language_lower 
+        FROM localized_title 
+        JOIN title ON localized_title.title_id = title.title_id 
+        WHERE localized_title.language IS NOT NULL
+        """ ;
+    ] ;
+    rr:subjectMap [
+        rr:template "http://ceribouchetiflor.be/resource/Show/{title_id}" ;
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label ;
+        rr:objectMap [ 
+            rml:reference "region" ;
+            rml:languageMap[
+                rml:reference "language_lower" ;
+            ]
+        ] ;
+    ] ;
+.

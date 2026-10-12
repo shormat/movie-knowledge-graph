@@ -1,0 +1,68 @@
+services:
+    imdb:
+        image: mysql:8.0
+        container_name: imdb
+        ports: 
+            - "4269:3306"
+        command: --default-authentication-plugin=mysql_native_password --secure-file-priv=/docker-entrypoint-initdb.d
+        environment:
+            # DO NOT FORGET TO UPDATE YOUR DATABASE, USERNAME, AND PASSWORD WITH THAT OF YOUR GROUP!
+            MYSQL_DATABASE: ceribou-chetiflor
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_ROOT_PASSWORD: root 
+        volumes:
+            - ./data/imdb:/docker-entrypoint-initdb.d
+            - ./conf_imdb:/etc/mysql/conf.d
+        networks:
+            - krrnetwork
+    yt:
+        image: mysql:8.0
+        container_name: yt_db
+        ports: 
+            - "4270:3306"
+        command: --default-authentication-plugin=mysql_native_password --secure-file-priv=/docker-entrypoint-initdb.d
+        environment:
+            # DO NOT FORGET TO UPDATE YOUR DATABASE, USERNAME, AND PASSWORD WITH THAT OF YOUR GROUP!
+            MYSQL_DATABASE: ceribou-chetiflor
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_ROOT_PASSWORD: root 
+        volumes:
+            - ./data/youtube:/docker-entrypoint-initdb.d
+            - ./conf_yt:/etc/mysql/conf.d
+        networks:
+            - krrnetwork
+    streaming:
+        image: mysql:8.0
+        container_name: streaming_db
+        ports: 
+            - "4271:3306"
+        command: --default-authentication-plugin=mysql_native_password --secure-file-priv=/docker-entrypoint-initdb.d
+        environment:
+            # DO NOT FORGET TO UPDATE YOUR DATABASE, USERNAME, AND PASSWORD WITH THAT OF YOUR GROUP!
+            MYSQL_DATABASE: ceribou-chetiflor
+            MYSQL_USER: admin
+            MYSQL_PASSWORD: admin
+            MYSQL_ROOT_PASSWORD: root 
+        volumes:
+            - ./data/streaming:/docker-entrypoint-initdb.d
+            - ./conf_streaming:/etc/mysql/conf.d
+        networks:
+            - krrnetwork
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+        ports:
+            - 8081:80
+        networks:
+            - krrnetwork
+        depends_on:
+            - imdb
+            - yt
+            - streaming
+
+networks:
+    krrnetwork:
+        driver: bridge

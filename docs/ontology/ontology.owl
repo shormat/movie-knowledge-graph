@@ -1,0 +1,724 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://ceribouchetiflor.be/ontology#"
+     xml:base="http://ceribouchetiflor.be/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://ceribouchetiflor.be/ontology#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#actedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#actedIn">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Actor"/>
+        <rdfs:comment>Indicates that a person acted in a movie</rdfs:comment>
+        <rdfs:label>actedIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#appearsIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#appearsIn">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Character"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>Links a character to a show that it appears in.</rdfs:comment>
+        <rdfs:label>appearsIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#composedFor -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#composedFor">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Composer"/>
+        <rdfs:comment>Indicates that a person composed for some title</rdfs:comment>
+        <rdfs:label>composedFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#directed -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#directed">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <owl:inverseOf rdf:resource="http://ceribouchetiflor.be/ontology#directedBy"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Director"/>
+        <rdfs:comment>Indicates that a person directed some title</rdfs:comment>
+        <rdfs:label>directed</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#directedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#directedBy">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#employed"/>
+        <rdfs:comment>Indicates that a person directed some movie</rdfs:comment>
+        <rdfs:label>directed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#edited -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#edited">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <owl:inverseOf rdf:resource="http://ceribouchetiflor.be/ontology#editedBy"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#editor"/>
+        <rdfs:comment>Indicates that a person edited some title</rdfs:comment>
+        <rdfs:label>edited</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#editedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#editedBy">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#employed"/>
+        <rdfs:comment>Indicates that a person edited some movie</rdfs:comment>
+        <rdfs:label>editedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#employed -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#employed">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <rdfs:comment>Indicates that a movie employed a Person</rdfs:comment>
+        <rdfs:label>employed</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#episodeOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#episodeOf">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Episode"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Serie"/>
+        <rdfs:comment>Indicates that an episode is part of a serie</rdfs:comment>
+        <rdfs:label>episodeOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#hasGenre -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#hasGenre">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Genre"/>
+        <rdfs:comment>Indicates that a movie has some genre</rdfs:comment>
+        <rdfs:label>hasGenre</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#knownFor -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#knownFor">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>Indicates that a person is known for some title</rdfs:comment>
+        <rdfs:label>knownFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#knows -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#knows">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:comment>to recognize someone or something</rdfs:comment>
+        <rdfs:label>knows</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#played -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#played">
+        <owl:inverseOf rdf:resource="http://ceribouchetiflor.be/ontology#playedBy"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Character"/>
+        <rdfs:comment>Indicates that a person played some character</rdfs:comment>
+        <rdfs:label>playedCharacter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#playedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#playedBy">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Character"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:comment>Indicates that a character is played by a person</rdfs:comment>
+        <rdfs:label>playedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#workedFor -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#workedFor">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>Indicates that a person worked for a movie</rdfs:comment>
+        <rdfs:label>worked for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#workedWith -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#workedWith">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#knows"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:comment>Indicates that a person worked with another person</rdfs:comment>
+        <rdfs:label>workedWith</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#writtenBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#writtenBy">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#employed"/>
+        <owl:inverseOf rdf:resource="http://ceribouchetiflor.be/ontology#wrote"/>
+        <rdfs:comment>Indicates that a person wrote some movie</rdfs:comment>
+        <rdfs:label>writtenBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#wrote -->
+
+
+    <owl:ObjectProperty rdf:about="http://ceribouchetiflor.be/ontology#wrote">
+        <rdfs:subPropertyOf rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Writer"/>
+        <rdfs:comment>Indicates that a person wrote some title</rdfs:comment>
+        <rdfs:label>wrote</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#BirthYear -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#BirthYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The Birthyear of a person</rdfs:comment>
+        <rdfs:label>BirthYear</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#DeathYear -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#DeathYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The deathyear of a person</rdfs:comment>
+        <rdfs:label>DeathYear</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#averageRating -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#averageRating">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>the average rating of the title</rdfs:comment>
+        <rdfs:label>averageRating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#category -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#category">
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>the category of a character</rdfs:comment>
+        <rdfs:label>category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#endedOn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#endedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>the year the title ended on</rdfs:comment>
+        <rdfs:label>endedOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#episodeNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#episodeNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>the number of the episode in the serie</rdfs:comment>
+        <rdfs:label>episodeNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#isAdult -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#isAdult">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>if the serie is a serie for adults or not</rdfs:comment>
+        <rdfs:label>isAdult</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#name -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>the name of someone or something</rdfs:comment>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#numberOfVotes -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#numberOfVotes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>the number of imdb votes of the title</rdfs:comment>
+        <rdfs:label>numberOfVotes</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#runtimeMinutes -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#runtimeMinutes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>the number of minutes the serie was running</rdfs:comment>
+        <rdfs:label>runtimeMinutes</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#seasonNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#seasonNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Episode"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+        <rdfs:comment>the number of the episode in the serie</rdfs:comment>
+        <rdfs:label>seasonNumber</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#startedOn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://ceribouchetiflor.be/ontology#startedOn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The date the serie started on</rdfs:comment>
+        <rdfs:label>startedOn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Actor -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Actor">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#actedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#played"/>
+                        <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Character"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>someone who pretends to be someone else while performing in a film, play, or television or radio programme</rdfs:comment>
+        <rdfs:label>Actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Character -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Character">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#appearsIn"/>
+                        <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#playedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#category"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Genre"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Profession"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>a person represented in a film, play, or story:</rdfs:comment>
+        <rdfs:label>character</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Composer -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Composer">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#composedFor"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a person whose job is to arrange the letters, words, sentences, etc. of a book or a magazine before it is printed</rdfs:comment>
+        <rdfs:label>Composer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Director -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Director">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#directed"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a person who is in charge of a film or play and tells the actors how to play their parts</rdfs:comment>
+        <rdfs:label>Director</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Episode -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Episode">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#episodeOf"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Serie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Movie"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Serie"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#ShortFilm"/>
+        <rdfs:comment>one of the single parts into which a story is divided, especially when it is broadcast on the television or radio</rdfs:comment>
+        <rdfs:label>Episode</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Genre -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Genre">
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Profession"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>a particular subject or style of literature, art, or music</rdfs:comment>
+        <rdfs:label>Genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Movie -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Movie">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Serie"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#ShortFilm"/>
+        <rdfs:comment>a film shown in a cinema or on television and often telling a story</rdfs:comment>
+        <rdfs:label>Movie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Person -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#workedFor"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#BirthYear"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#DeathYear"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#name"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Profession"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>a person that was involved into any type of movie</rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Profession -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Profession">
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>The profession that a person made for a movie</rdfs:comment>
+        <rdfs:label>Profession</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Serie -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Serie">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <owl:disjointWith rdf:resource="http://ceribouchetiflor.be/ontology#ShortFilm"/>
+        <rdfs:comment>a set of television or radio broadcasts (titles) on the same subject or using the same characters but in different situations</rdfs:comment>
+        <rdfs:label>Serie</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#ShortFilm -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#ShortFilm">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+        <rdfs:comment>a film that is not long enough to be considered a feature film</rdfs:comment>
+        <rdfs:label>Short film</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Show -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Show">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#hasGenre"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Genre"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#averageRating"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#isAdult"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#numberOfVotes"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#runtimeMinutes"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#startedOn"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A thing that is displayed on the cinema/tv/streaming platform</rdfs:comment>
+        <rdfs:label>Show</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#Writer -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#Writer">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#wrote"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A person who writes articles, books, films etc., to be published</rdfs:comment>
+        <rdfs:label>Writer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://ceribouchetiflor.be/ontology#editor -->
+
+
+    <owl:Class rdf:about="http://ceribouchetiflor.be/ontology#editor">
+        <rdfs:subClassOf rdf:resource="http://ceribouchetiflor.be/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://ceribouchetiflor.be/ontology#edited"/>
+                <owl:someValuesFrom rdf:resource="http://ceribouchetiflor.be/ontology#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>a person who corrects and make changes to texts or films before they are printed or shown, or a person who is in charge of a newspaper, magazine, etc., and is responsible for all of its reports</rdfs:comment>
+        <rdfs:label>Editor</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

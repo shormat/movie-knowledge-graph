@@ -1,0 +1,39 @@
+# Prefix declarations to be used in RDF output
+@prefix conf: <http://richard.cyganiak.de/2007/pubby/config.rdf#> .
+@prefix movie: <http://ceribouchetiflor.be/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Server configuration section
+<> a conf:Configuration ;
+    conf:projectName "Movies and TV Shows" ;
+    conf:projectHomepage <http://ceribouchetiflor.be/> ;
+    conf:webBase <http://ceribouchetiflor.be/> ;
+    conf:usePrefixesFrom <> ;
+    conf:defaultLanguage "en" ;
+    # Dataset configuration
+    conf:dataset [
+        conf:sparqlEndpoint <http://0.0.0.0:3030/ceribouchetiflorDS/query> ;
+        conf:datasetBase <http://ceribouchetiflor.be/> ;
+        conf:datasetURIPattern "http://ceribouchetiflor.be/(.+)$" ;
+        
+        # Modified pattern to better handle fragment identifiers
+        conf:resourceURIPattern "^http://ceribouchetiflor.be/(.+)$" ;
+
+        conf:webResourcePrefix "" ;
+        # Added # to the list of fixed characters
+        conf:fixUnescapedCharacters """(),'!$&*+;=@#""" ;
+        conf:resourceDescriptionQuery "CONSTRUCT { ?__this__ ?p ?o } WHERE { ?__this__ ?p ?o }" ;
+        conf:resourceDescriptionQuery "CONSTRUCT { ?s ?p ?__this__ } WHERE { ?s ?p ?__this__ }" ;
+        conf:enableCache true;
+        conf:pageResourcePrefix "page/" ;
+        conf:dataResourcePrefix "data/" ;
+        conf:browserAcceptTypes "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" ;
+        conf:defaultMimeType "text/html" ;
+        
+        # Special handling for ontology paths
+        conf:specialResourcePattern "^http://ceribouchetiflor.be/ontology(.*)$" ;
+        conf:specialPagePattern "ontology$1" ;
+    ] .

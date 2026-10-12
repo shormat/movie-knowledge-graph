@@ -1,0 +1,54 @@
+#parse("header.vm")
+
+#if ($title == "Index of Resources" || $title == "Index of Resources (en)")
+  <div class="text-center my-5">
+    <h1>This is a homepage</h1>
+    <div id="links-list" class="list-group"></div>
+  </div>
+  <script>
+    // Fetch and parse output.ttl for links
+    fetch('${server_base}static/output.ttl')
+      .then(res => res.text())
+      .then(text => {
+        const matches = [...text.matchAll(/<([^>]+)>/g)];
+        const unique = Array.from(new Set(matches.map(m => m[1])));
+        const container = document.getElementById('links-list');
+        unique.forEach(uri => {
+          const a = document.createElement('a');
+          a.href = uri;
+          a.textContent = uri;
+          a.className = 'list-group-item list-group-item-action';
+          container.appendChild(a);
+        });
+      });
+  </script>
+#end
+
+#if ($title != "Index of Resources" && $title != "Index of Resources (en)")
+
+#if ($image)
+    <div class="image"><img src="$image" alt="Depiction of $title" /></div>
+#end
+
+#if ($comment)
+    <p class="comment">$comment</p>
+#end
+
+#if (!$properties.isEmpty())
+#parse("proptable.vm")
+#else
+    <p>No further information is available.</p>
+#end
+
+#if ($metadata)
+	<a name="meta"></a>
+	<h2>Metadata</h2>
+	<div id="metadata-tables">
+	#parse("metadatatable.vm")
+	</div>
+	<a href="#meta" onclick="showAllMetadata('metadata-tables')">expand all</a>
+#end
+
+#end
+
+#parse("footer.vm")

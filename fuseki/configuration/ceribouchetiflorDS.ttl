@@ -1,0 +1,80 @@
+PREFIX :       <http://base/#>
+PREFIX fuseki: <http://jena.apache.org/fuseki#>
+PREFIX ja:     <http://jena.hpl.hp.com/2005/11/Assembler#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tdb2:   <http://jena.apache.org/2016/tdb#>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+
+:service_tdb_all  rdf:type            fuseki:Service ;
+    rdfs:label                   "TDB2 ceribouchetiflorDS with OWL2 QL Reasoning" ;
+    rdfs:comment                "Optimized by CorentinMich on 2025-04-28 09:05:26"^^xsd:string ;
+    fuseki:dataset               :tdb_dataset_with_reasoning ;
+    fuseki:name                  "ceribouchetiflorDS" ;
+    fuseki:serviceQuery          "query", "sparql", "" ;
+    fuseki:serviceReadGraphStore "get" ;
+    fuseki:serviceReadWriteGraphStore "data" ;
+    fuseki:serviceUpdate         "", "update" ;
+    fuseki:serviceUpload         "upload" .
+
+:tdb_dataset_with_reasoning
+    rdf:type       ja:RDFDataset ;
+    ja:defaultGraph [
+        rdf:type ja:InfModel ;
+        ja:reasoner [
+            rdf:type ja:ReasonerFactory ;
+            ja:reasonerClass "org.apache.jena.reasoner.rulesys.OWLMiniReasonerFactory" ;
+            
+            ja:parameter [
+                ja:paramName "enableOWLTransitivity" ;
+                ja:paramValue "true" ;
+            ] ;
+            ja:parameter [
+                ja:paramName "enableOWL2QL" ;
+                ja:paramValue "true" ;
+            ] ;
+
+            ja:parameter [
+                ja:paramName "enableTGCCaching" ;
+                ja:paramValue "true" ;
+            ] ;
+            
+            ja:parameter [
+                ja:paramName "derivationLogging" ;
+                ja:paramValue "false" ;
+            ] ;
+            
+            ja:parameter [
+                ja:paramName "traceOn" ;
+                ja:paramValue "false" ;
+            ] ;
+            ja:schema [
+                rdf:type ja:MemoryModel ;
+                ja:content [
+                    rdf:type ja:ContentItem ;
+                    ja:externalContent <file:../../ontology/krr_QL.ttl> ;
+                ] ;
+            ] ;
+        ] ;
+        
+        ja:baseModel [
+            rdf:type tdb2:GraphTDB2 ;
+            tdb2:location "fuseki/databases/ceribouchetiflorDS" ;
+            tdb2:unionDefaultGraph true ;
+            
+            tdb2:fileMode "mapped" ; 
+            
+            tdb2:nodeTableCacheSize "20000000" ; 
+            tdb2:nodeTableBaseName "nodes" ;
+            
+            tdb2:blockReadCacheSize "8000" ;
+            tdb2:blockWriteCacheSize "2000" ;
+        ] ;
+    ] .
+
+:dataset_stats
+    rdf:type ja:Object ;
+    ja:statsAgeThreshold "10000" ; 
+    ja:statsCalculationPeriod "2000" ;
+    ja:enableStats "true" .

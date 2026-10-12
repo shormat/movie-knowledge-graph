@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    :root[data-theme="light"] {
+      --primary-color: #2563eb;
+      --secondary-color: #3b82f6;
+      --accent-color: #f59e0b;
+      --background-color: #f8fafc;
+      --surface-color: #ffffff;
+      --text-color: #1e293b;
+      --border-color: #e2e8f0;
+      --header-bg: linear-gradient(135deg, #1e293b, #334155);
+      --header-text: #ffffff;
+      --tooltip-bg: #1e293b;
+      --code-bg: #f1f5f9;
+      --gradient-title: linear-gradient(90deg, #f6e05e, #f59e0b, #ed8936, #f6e05e);
+    }
+
+    :root[data-theme="dark"] {
+      --primary-color: #60a5fa;
+      --secondary-color: #3b82f6;
+      --accent-color: #fbbf24;
+      --background-color: #0f172a;
+      --surface-color: #1e293b;
+      --text-color: #e2e8f0;
+      --border-color: #334155;
+      --header-bg: linear-gradient(135deg, #020617, #1e293b);
+      --header-text: #f8fafc;
+      --tooltip-bg: #e2e8f0;
+      --code-bg: #1e293b;
+      --gradient-title: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706, #fbbf24);
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      transition: all 0.3s ease;
+      line-height: 1.5;
+    }
+
+    .header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 1.5rem 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      position: relative;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      flex: 1;
+    }
+
+    .header-left h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+      background: var(--gradient-title);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientAnimation 6s ease infinite;
+    }
+
+    .header-left p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--header-text);
+    }
+
+    .theme-toggle:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .query-examples {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .query-examples::before {
+      content: '📝';
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+    }
+
+    .query-examples select {
+      width: 100%;
+      padding: 0.5rem 0.5rem 0.5rem 3rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background-color: var(--surface-color);
+      color: var(--text-color);
+      font-size: 0.9rem;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .query-examples select:hover {
+      border-color: var(--primary-color);
+    }
+
+    .query-examples select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .query-info {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+
+    .query-info.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .query-info h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem;
+      color: var(--primary-color);
+    }
+
+    .query-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-color);
+    }
+
+    #yasgui {
+      font-size: 14px;
+      background: var(--surface-color);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+    }
+
+    .yasgui .endpointText {
+      display: none !important;
+    }
+
+    .yasgui .autocompleteWrapper {
+      display: none !important;
+    }
+
+    /* Custom YASGUI styling */
+    .yasgui .yasqe {
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: var(--surface-color);
+    }
+
+    .yasgui .yasr {
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background-color: var(--surface-color);
+    }
+
+    .yasgui .controlbar {
+      background-color: var(--background-color);
+      border-radius: 8px;
+      padding: 0.5rem;
+    }
+
+    /* Buttons styling */
+    .yasgui button {
+      transition: all 0.2s ease;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .yasgui button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      background-color: var(--secondary-color);
+    }
+
+    .yasgui button::before {
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+    }
+
+    .yasgui button.yasqe_queryBtn::before {
+      content: '\f04b';
+    }
+
+    .yasgui button.yasqe_shareBtn::before {
+      content: '\f1e0';
+    }
+
+    .status-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--surface-color);
+      border-top: 1px solid var(--border-color);
+      padding: 0.5rem 2rem;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .status-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-indicator {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    .status-indicator::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .status-indicator.connected::before {
+      background-color: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .status-indicator.disconnected::before {
+      background-color: #ef4444;
+      box-shadow: 0 0 8px #ef4444;
+    }
+
+    #resultCount {
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+
+    #queryTime {
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    [data-tooltip] {
+      position: relative;
+    }
+
+    [data-tooltip]:hover::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.5rem;
+      background: var(--tooltip-bg);
+      color: var(--header-text);
+      font-size: 0.8rem;
+      border-radius: 4px;
+      white-space: nowrap;
+      z-index: 10;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Ensure all CodeMirror text and gutters use the dark-mode text color */
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror,
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror *,
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror-gutters,
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror-linenumber {
+      background-color: var(--surface-color) !important;
+      color: var(--text-color) !important;
+    }
+    /* Ensure YASR result elements inherit dark-mode text color */
+    :root[data-theme="dark"] .yasgui .yasr,
+    :root[data-theme="dark"] .yasgui .yasr * {
+      color: var(--text-color) !important;
+    }
+
+    /* Dark-mode backgrounds for editor and results */
+    :root[data-theme="dark"] .yasgui .yasqe,
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror,
+    :root[data-theme="dark"] .yasgui .yasqe .CodeMirror-scroll {
+      background-color: var(--surface-color) !important;
+    }
+    :root[data-theme="dark"] .yasgui .yasr,
+    :root[data-theme="dark"] .yasgui .yasr .results,
+    :root[data-theme="dark"] .yasgui .yasr table {
+      background-color: var(--surface-color) !important;
+    }
+
+    /* Fix: ensure all result table cells use dark surface in dark theme */
+    :root[data-theme="dark"] .yasgui .yasr table,
+    :root[data-theme="dark"] .yasgui .yasr table th,
+    :root[data-theme="dark"] .yasgui .yasr table td,
+    :root[data-theme="dark"] .yasgui .yasr .results table,
+    :root[data-theme="dark"] .yasgui .yasr .results table th,
+    :root[data-theme="dark"] .yasgui .yasr .results table td {
+      background-color: var(--surface-color) !important;
+    }
+
+    /* Further enforce dark-mode for YASR result cells and rows */
+    :root[data-theme="dark"] .yasgui .yasr .results table td,
+    :root[data-theme="dark"] .yasgui .yasr .results table th {
+      background-color: var(--surface-color) !important;
+      color: var(--text-color) !important;
+    }
+    :root[data-theme="dark"] .yasgui .yasr .results table tbody tr:nth-child(even) td {
+      background-color: var(--background-color) !important;
+    }
+    :root[data-theme="dark"] .yasgui .yasr .results table tbody tr:nth-child(odd) td {
+      background-color: var(--surface-color) !important;
+    }
+
+    /* Endpoint selector styling */
+    .endpoint-selector {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .endpoint-selector h3 {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .endpoint-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .endpoint-btn {
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background-color: var(--background-color);
+      border: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-color);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .endpoint-btn:hover {
+      border-color: var(--primary-color);
+      transform: translateY(-1px);
+    }
+
+    .endpoint-btn.active {
+      background-color: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .endpoint-btn .endpoint-icon {
+      font-size: 0.9rem;
+    }
+
+    .endpoint-description {
+      font-size: 0.8rem;
+      color: var(--text-color);
+      opacity: 0.8;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      background-color: var(--background-color);
+      border-radius: 0.5rem;
+    }
+  </style>
+  <title>Movies SPARQL Explorer</title>
+</head>
+<body>
+  <div class="header">
+    <div class="header-content">
+      <div class="header-left">
+        <h1>Movies SPARQL Explorer</h1>
+        <p>Query and explore our movies knowledge graph</p>
+      </div>
+      <div class="header-right">
+        <div class="header-actions">
+          <button class="btn theme-toggle" onclick="toggleTheme()" data-tooltip="Toggle dark mode">
+            <i class="btn-icon fas fa-moon"></i>
+            <span class="btn-text">Theme</span>
+          </button>
+          <button class="btn theme-toggle" onclick="toggleHelp()" data-tooltip="View documentation">
+            <i class="btn-icon fas fa-question-circle"></i>
+            <span class="btn-text">Help</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="endpoint-selector">
+      <h3>Select SPARQL Endpoint</h3>
+      <div class="endpoint-buttons">
+        <button class="endpoint-btn active" data-endpoint="http://localhost:3030/ceribouchetiflorDS/query" onclick="switchEndpoint(this)">
+          <i class="endpoint-icon fas fa-bolt"></i>
+          On-the-fly Reasoning
+        </button>
+        <button class="endpoint-btn" data-endpoint="http://localhost:3030/ceribouchetiflorDSNoReasoning/query" onclick="switchEndpoint(this)">
+          <i class="endpoint-icon fas fa-cube"></i>
+          No Reasoning
+        </button>
+      </div>
+      <div class="endpoint-description" id="endpointDescription">
+        Default endpoint with precomputed reasoning. Queries will include inferred triples.
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="query-examples">
+        <select id="querySelector" onchange="loadExample()">
+          <option value="">Select an example query...</option>
+          <option value="basic">Basic query - Show all triples</option>
+          <option value="nonActors">Find people who never acted</option>
+          <option value="topDirector">Find most prolific director</option>
+          <option value="subProperties">List properties with super-properties</option>
+          <option value="mostProperties">Find resource with most properties</option>
+          <option value="collaborators">Find collaborations between people</option>
+          <option value="mostWorks">Shows directors sorted by their number of works along with their best rated work.</option>
+          <option value="federated">Get Charles Chaplin page from wikidata</option>
+          <option value="connections">Compute the Kevin Bacon number between two actors</option>
+        </select>
+      </div>
+    </div>
+    <div id="queryInfo" class="query-info">
+      <h3>Query Description</h3>
+      <p id="queryDescription"></p>
+    </div>
+    <div id="yasgui"></div>
+  </div>
+  <div class="status-bar">
+    <div class="status-bar-left">
+      <div id="connectionStatus" class="status-indicator">Connected to endpoint</div>
+      <div id="resultCount"></div>
+    </div>
+    <div id="queryTime"></div>
+  </div>
+  <script>
+    // Theme toggling
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const icon = document.querySelector('.theme-toggle .btn-icon');
+      icon.className = 'btn-icon fas ' + (currentTheme === 'light' ? 'fa-moon' : 'fa-sun');
+    }
+
+    // Help toggling
+    function toggleHelp() {
+      const info = document.getElementById('queryInfo');
+      info.classList.toggle('active');
+    }
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon();
+
+    // Update status bar
+    function updateStatus(success = true, resultCount = 0, queryTime = 0) {
+      const status = document.getElementById('connectionStatus');
+      const resultCountElem = document.getElementById('resultCount');
+      const queryTimeElem = document.getElementById('queryTime');
+
+      status.textContent = success ? 'Connected to endpoint' : 'Connection failed';
+      status.className = 'status-indicator ' + (success ? 'connected' : 'disconnected');
+      
+    }
+
+    // Endpoint information
+    const endpointInfo = {
+      "http://localhost:3030/ceribouchetiflorDS/query": {
+        name: "On-the-fly Reasoning",
+        description: "Reasoning is performed on-the-fly when querying this endpoint. May be slow but provides up-to-date inferences."
+      },
+      "http://localhost:3030/ceribouchetiflorDSNoReasoning/query": {
+        name: "No Reasoning",
+        description: "Dataset without reasoning artifacts. The ontology is available in the http://ceribouchetiflor.be/ontology graph."
+      },
+    };
+
+    // Switch endpoint function
+    function switchEndpoint(buttonElement) {
+      const endpoint = buttonElement.getAttribute('data-endpoint');
+      
+      // Update active button status
+      document.querySelectorAll('.endpoint-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      buttonElement.classList.add('active');
+      
+      // Update endpoint description
+      document.getElementById('endpointDescription').textContent = endpointInfo[endpoint].description;
+      
+      // Update YASGUI endpoint
+      yasgui.getTab().setEndpoint(endpoint);
+      
+      // Save selected endpoint in localStorage
+      localStorage.setItem('selectedEndpoint', endpoint);
+      
+      // Update status message
+      updateStatus(true);
+      console.log(`Switched to endpoint: ${endpoint}`);
+    }
+    
+    // Initialize YASGUI with configuration
+    const yasgui = new Yasgui(document.getElementById("yasgui"), {
+      requestConfig: {
+        endpoint: "http://localhost:3030/ceribouchetiflorDS/query"
+      },
+      copyEndpointOnNewTab: true,
+      persistencyExpire: (24 * 60 * 60) * 1000, // 24 hours
+      yasqe: {
+        sparql: {
+          showQueryButton: true
+        }
+      }
+    });
+
+    // Example queries with descriptions
+    const queryExamples = {
+      basic: {
+        query: `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?subject ?predicate ?object
+WHERE {
+  ?subject ?predicate ?object
+}
+LIMIT 10`,
+        description: "Shows the first 10 triples in the database to explore the data structure."
+      },
+      nonActors: {
+        query: `PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT ?name 
+WHERE {
+    ?p a movi:Person ;
+       movi:name ?name .
+    OPTIONAL { ?p movi:actedIn ?f . }
+    FILTER (!BOUND(?f)) 
+} 
+ORDER BY ?name 
+LIMIT 100`,
+        description: "Lists all persons who have never acted in any film, sorted by name. Note that some names may appear multiple times as they refer to different people."
+      },
+      topDirector: {
+        query: `PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT ?name (COUNT(?f) AS ?count) 
+WHERE {
+  ?p a movi:Person ;
+     movi:name ?name ;
+     movi:directed ?f .
+}
+GROUP BY ?name
+ORDER BY DESC(?count)
+LIMIT 1`,
+        description: "Finds the person who has directed the most movies, showing their name and the number of movies directed."
+      },
+      subProperties: {
+        query: `PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT DISTINCT ?property
+WHERE {
+  ?property rdfs:subPropertyOf+ ?c1
+  FILTER(?c1 != owl:topDataProperty && ?c1 != owl:topObjectProperty)
+}`,
+        description: "Lists all properties in our ontology that have at least one super-property (excluding top-level OWL properties)."
+      },
+      mostProperties: {
+        query: `PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT ?resource (COUNT(DISTINCT ?object) AS ?propertyCount)
+WHERE {
+  {
+    SELECT ?resource ?object
+    WHERE {
+      ?resource owl:topDataProperty ?object .
+    }
+  }
+}
+GROUP BY ?resource
+ORDER BY DESC(?propertyCount)
+LIMIT 1`,
+        description: "Finds the resource that has the most object properties using OWL-QL reasoning capabilities."
+      },
+      collaborators: {
+        query: `PREFIX : <http://ceribouchetiflor.be/ontology#>
+
+CONSTRUCT {
+  ?person1 :workedWith ?person2 .
+}
+WHERE {
+  ?person1 :workedFor ?project .
+  ?person2 :workedFor ?project .
+  FILTER(?person1 != ?person2)
+} LIMIT 10`,
+        description: "Constructs new relationships showing people who worked together on the same project. Limited to 10 results."
+      },
+      mostWorks: {
+        query: `PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT ?directorName ?bestRatedShow ?nb_projects
+WHERE {
+  {
+    SELECT ?director (MAX(?rating) AS ?bestRating) (COUNT(?project) AS ?nb_projects)
+    WHERE {
+      ?director movi:directed ?project.
+      ?project movi:averageRating ?rating.
+    }
+    GROUP BY ?director
+	ORDER BY DESC(?nb_projects)
+  }
+  
+  ?director movi:directed ?project;
+            movi:name ?directorName.
+  ?project movi:averageRating ?rating;
+           movi:name ?bestRatedShow.
+  FILTER(?rating = ?bestRating)
+}`,
+        description: "Shows directors sorted by their number of works along with their best rated work."
+      },
+      federated: {
+        query: `PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX movi: <http://ceribouchetiflor.be/ontology#>
+
+SELECT DISTINCT ?person ?personLabel WHERE {
+  ?person movi:name ?personLabel .
+
+  SERVICE <https://query.wikidata.org/sparql> {
+    wd:Q729356 rdfs:label ?wikidataLabel .
+  }
+
+  FILTER(STR(?personLabel) = STR(?wikidataLabel))
+}
+`,
+        description: "Charles chaplin page in our linked data from wikidata. This query uses a federated query to get the label from wikidata."
+      },
+      connections: {
+        query: `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://ceribouchetiflor.be/ontology#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?person1 ?person2 (COUNT(DISTINCT ?mid1) +1 AS ?cnt)
+WHERE {
+  BIND(<http://ceribouchetiflor.be/resource/Person/nm0005690> AS ?person1)
+  BIND(<http://ceribouchetiflor.be/resource/Person/nm0000636> AS ?person2)
+  ?person1 :workedFor/^:workedFor+ ?mid1 .
+  ?mid1 :workedFor/^:workedFor+ ?person2 .
+  FILTER(?mid1 != ?person1 && ?mid1 != ?person2)
+} GROUP BY ?person1 ?person2`,
+        description: "Computes the Kevin Bacon number between two actors. The result is the number of movies they have in common."
+      }
+    };
+
+    // Load example query
+    function loadExample() {
+      const selector = document.getElementById('querySelector');
+      const selectedExample = queryExamples[selector.value];
+      if (selectedExample) {
+        yasgui.getTab().yasqe.setValue(selectedExample.query);
+        document.getElementById('queryDescription').textContent = selectedExample.description;
+        document.getElementById('queryInfo').classList.add('active');
+      }
+    }
+
+    // Add event listeners for query execution
+    yasgui.on('queryStart', (instance) => {
+      instance.getTab().yasqe.queryStartTime = Date.now();
+      updateStatus(true, 0, 0);
+    });
+
+    yasgui.on('queryResponse', (instance, response) => {
+      let resultCount = 0;
+      
+      try {
+        if (response.results && response.results.bindings) {
+          resultCount = response.results.bindings.length;
+        } else if (response.boolean !== undefined) {
+          resultCount = response.boolean ? 1 : 0;
+        } else if (Array.isArray(response) && response.length) {
+          resultCount = response.length;
+        }
+
+        const queryStartTime = instance.getTab().yasqe.queryStartTime || Date.now();
+        const queryTime = response.queryTime || (Date.now() - queryStartTime);
+
+        updateStatus(true, resultCount, queryTime);
+        
+        console.log('Query executed successfully:', {
+          resultCount,
+          queryTime,
+          responseType: response.results ? 'SELECT' : response.boolean !== undefined ? 'ASK' : 'CONSTRUCT/DESCRIBE'
+        });
+      } catch (error) {
+        console.error('Error processing query response:', error);
+        updateStatus(false);
+      }
+    });
+
+    yasgui.on('error', (instance, error) => {
+      console.error('Query error:', error);
+      updateStatus(false);
+    });
+
+    // Initialize with default query
+    if (!yasgui.getTab().yasqe.getValue()) {
+      yasgui.getTab().yasqe.setValue(queryExamples.basic.query);
+    }
+    
+    // Load saved endpoint if exists
+    window.addEventListener('load', () => {
+      const savedEndpoint = localStorage.getItem('selectedEndpoint');
+      if (savedEndpoint) {
+        const endpointButton = document.querySelector(`.endpoint-btn[data-endpoint="${savedEndpoint}"]`);
+        if (endpointButton) {
+          switchEndpoint(endpointButton);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

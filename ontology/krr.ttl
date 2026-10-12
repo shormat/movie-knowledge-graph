@@ -1,0 +1,539 @@
+@prefix : <http://ceribouchetiflor.be/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ceribouchetiflor.be/ontology#> .
+
+<http://ceribouchetiflor.be/ontology#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ceribouchetiflor.be/ontology#Played
+:Played rdf:type owl:ObjectProperty ;
+        owl:inverseOf :playedBy ;
+        rdfs:domain :Person ;
+        rdfs:range :Character ;
+        rdfs:comment "Tells us that a person played some character" ;
+        rdfs:label "playedCharacter" .
+
+
+###  http://ceribouchetiflor.be/ontology#actedIn
+:actedIn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :workedFor ;
+         rdfs:comment "telles us that a person acted in a movie" ;
+         rdfs:label "acted in" .
+
+
+###  http://ceribouchetiflor.be/ontology#appearsIn
+:appearsIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Character ;
+           rdfs:range :Show ;
+           rdfs:comment "Links a character to a show that it appears in." ;
+           rdfs:label "appearsIn" .
+
+
+###  http://ceribouchetiflor.be/ontology#composedFor
+:composedFor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :workedFor ;
+             rdfs:comment "telles us that a person composed for some title" ;
+             rdfs:label "composed for" .
+
+
+###  http://ceribouchetiflor.be/ontology#directed
+:directed rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :workedFor ;
+          owl:inverseOf :directedBy ;
+          rdfs:comment "tells us that a person directed some title" ;
+          rdfs:label "directed" .
+
+
+###  http://ceribouchetiflor.be/ontology#directedBy
+:directedBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :employed ;
+            rdfs:comment "Tells us that a person directed some movie" ;
+            rdfs:label "directed by" .
+
+
+###  http://ceribouchetiflor.be/ontology#edited
+:edited rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :workedFor ;
+        owl:inverseOf :editedBy ;
+        rdfs:comment "telles us that a person edited some title" ;
+        rdfs:label "edited" .
+
+
+###  http://ceribouchetiflor.be/ontology#editedBy
+:editedBy rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :employed ;
+          rdfs:comment "tells us that a person edited some movie" ;
+          rdfs:label "edited by" .
+
+
+###  http://ceribouchetiflor.be/ontology#employed
+:employed rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :workedFor ;
+          rdfs:comment "Tells us that a movie employed a Person" ;
+          rdfs:label "employed" .
+
+
+###  http://ceribouchetiflor.be/ontology#hasGenre
+:hasGenre rdf:type owl:ObjectProperty ;
+          rdfs:domain :Show ;
+          rdfs:range :Genre ;
+          rdfs:comment "Tells that a movie has some genre" ;
+          rdfs:label "has genre" .
+
+
+###  http://ceribouchetiflor.be/ontology#knownFor
+:knownFor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :workedFor ;
+          rdfs:domain :Person ;
+          rdfs:range :Show ;
+          rdfs:comment "telles us that a person iw known for some title" ;
+          rdfs:label "known for" .
+
+
+###  http://ceribouchetiflor.be/ontology#knows
+:knows rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       rdf:type owl:SymmetricProperty ,
+                owl:IrreflexiveProperty ;
+       rdfs:domain :Person ;
+       rdfs:range :Person ;
+       rdfs:comment "to recognize someone or something" ;
+       rdfs:label "knows" .
+
+
+###  http://ceribouchetiflor.be/ontology#unlistedJob
+:unlistedJob rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :workedFor ;
+       rdfs:comment "tells us that a person is working for an other type not described" ;
+       rdfs:label "unlistedJob" .
+
+
+###  http://ceribouchetiflor.be/ontology#partOf
+:partOf rdf:type owl:ObjectProperty ;
+        rdfs:domain :Episode ;
+        rdfs:range :Serie ;
+        rdfs:comment "Tells us that an episode is part of a serie" ;
+        rdfs:label "episodeOf" .
+
+
+###  http://ceribouchetiflor.be/ontology#playedBy
+:playedBy rdf:type owl:ObjectProperty .
+
+
+###  http://ceribouchetiflor.be/ontology#workedAs
+:workedAs rdf:type owl:ObjectProperty ;
+          rdfs:comment "Links a person to a profession that he worked as." ;
+          rdfs:label "workedAs" .
+
+
+###  http://ceribouchetiflor.be/ontology#workedFor
+:workedFor rdf:type owl:ObjectProperty ;
+           rdfs:domain :Person ;
+           rdfs:range :Show ;
+           rdfs:comment "Telles us that a person worked for a movie" ;
+           rdfs:label "worked for" .
+
+
+###  http://ceribouchetiflor.be/ontology#workedWith
+:workedWith rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :knows ;
+            rdf:type owl:SymmetricProperty ;
+            rdfs:domain :Person ;
+            rdfs:range :Person ;
+            rdfs:comment "tells us that a person worked with another person" ;
+            rdfs:label "worked with" .
+
+
+###  http://ceribouchetiflor.be/ontology#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :employed ;
+           owl:inverseOf :wrote ;
+           rdfs:comment "tells us that a person wrote some movie" ;
+           rdfs:label "written by" .
+
+
+###  http://ceribouchetiflor.be/ontology#wrote
+:wrote rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf :workedFor ;
+       rdfs:comment "tells us that a person wrote some title" ;
+       rdfs:label "wrote" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://ceribouchetiflor.be/ontology#BirthYear
+:BirthYear rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :PersonProperties ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "The Birthyear of a person" ;
+           rdfs:label "BirthYear" .
+
+
+###  http://ceribouchetiflor.be/ontology#CharacterCategory
+:CharacterCategory rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :CharacterProperties ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "The category of the character" ;
+                   rdfs:label "CharacterCategory" .
+
+
+###  http://ceribouchetiflor.be/ontology#CharacterName
+:CharacterName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :CharacterProperties ;
+               rdfs:range xsd:string ;
+               rdfs:comment "The name of the character" ;
+               rdfs:label "CharacterName" .
+
+
+###  http://ceribouchetiflor.be/ontology#CharacterProperties
+:CharacterProperties rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Character ;
+                     rdfs:comment "Properties about characters" ;
+                     rdfs:label "CharacterProperties" .
+
+
+###  http://ceribouchetiflor.be/ontology#DeathYear
+:DeathYear rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :PersonProperties ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "The deathyear of a person" ;
+           rdfs:label "DeathYear" .
+
+
+###  http://ceribouchetiflor.be/ontology#PersonName
+:PersonName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :PersonProperties ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The name of a person" ;
+            rdfs:label "PersonName" .
+
+
+###  http://ceribouchetiflor.be/ontology#PersonProperties
+:PersonProperties rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Person ;
+                  rdfs:comment "Properties on persons" ;
+                  rdfs:label "PersonProperties" .
+
+
+###  http://ceribouchetiflor.be/ontology#ProfessionName
+:ProfessionName rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :ProfessionProperties ;
+                rdfs:range xsd:string ;
+                rdfs:comment "The name of the proffession" ;
+                rdfs:label "ProfessionName" .
+
+
+###  http://ceribouchetiflor.be/ontology#ProfessionProperties
+:ProfessionProperties rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Profession ;
+                      rdfs:comment "Properties about profession" ;
+                      rdfs:label "ProfessionProperties" .
+
+
+###  http://ceribouchetiflor.be/ontology#TitleProperties
+:TitleProperties rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Show ;
+                 rdfs:comment "all properties realated to title" ;
+                 rdfs:label "ShowProperties" .
+
+
+###  http://ceribouchetiflor.be/ontology#average_rating
+:average_rating rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :TitleProperties ;
+                rdfs:range owl:rational ;
+                rdfs:comment "the average rating of the title" ;
+                rdfs:label "average_rating" .
+
+
+###  http://ceribouchetiflor.be/ontology#endedOn
+:endedOn rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :TitleProperties ;
+         rdfs:range xsd:dateTime ;
+         rdfs:comment "the year the title ended on" ;
+         rdfs:label "ended on" .
+
+
+###  http://ceribouchetiflor.be/ontology#episodeNumber
+:episodeNumber rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :episodeProperties ;
+               rdfs:range xsd:nonNegativeInteger ;
+               rdfs:comment "the number of the episode in the serie" ;
+               rdfs:label "episodeNumber" .
+
+
+###  http://ceribouchetiflor.be/ontology#episodeProperties
+:episodeProperties rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :TitleProperties ;
+                   rdfs:domain :Episode ;
+                   rdfs:comment "the properties about episodes" ;
+                   rdfs:label "episodeProperties" .
+
+
+###  http://ceribouchetiflor.be/ontology#isAdult
+:isAdult rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :TitleProperties ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "if the serie is a serie for adults or not" ;
+         rdfs:label "isAdult" .
+
+
+###  http://ceribouchetiflor.be/ontology#numberOfVotes
+:numberOfVotes rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :TitleProperties ;
+               rdfs:range xsd:nonNegativeInteger ;
+               rdfs:comment "the number of imdb votes of the title" ;
+               rdfs:label "numberOfVotes" .
+
+
+###  http://ceribouchetiflor.be/ontology#runtimeMinutes
+:runtimeMinutes rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf :TitleProperties ;
+                rdfs:range xsd:nonNegativeInteger ;
+                rdfs:comment "the number of minutes the serie was running" ;
+                rdfs:label "runtimeMinutes" .
+
+
+###  http://ceribouchetiflor.be/ontology#seasonNumber
+:seasonNumber rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :episodeProperties ;
+              rdfs:range xsd:nonNegativeInteger ;
+              rdfs:comment "the number of the episode in the serie" ;
+              rdfs:label "seasonNumber" .
+
+
+###  http://ceribouchetiflor.be/ontology#startedOn
+:startedOn rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :TitleProperties ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "The date the serie started on" ;
+           rdfs:label "started on" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ceribouchetiflor.be/ontology#Character
+:Character rdf:type owl:Class ;
+           rdfs:subClassOf [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :appearsIn ;
+                                                    owl:someValuesFrom :Show
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :playedBy ;
+                                                    owl:someValuesFrom :Person
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :CharacterCategory ;
+                             owl:someValuesFrom xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :CharacterName ;
+                             owl:someValuesFrom xsd:string
+                           ] ;
+           owl:disjointWith :Genre ,
+                            :Person ,
+                            :Profession ,
+                            :Show ;
+           rdfs:comment "a person represented in a film, play, or story:" ;
+           rdfs:label "character" .
+
+
+###  http://ceribouchetiflor.be/ontology#Episode
+:Episode rdf:type owl:Class ;
+         rdfs:subClassOf :Show ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :partOf ;
+                           owl:someValuesFrom :Serie
+                         ] ;
+         owl:disjointWith :Movie ,
+                          :Serie ,
+                          :ShortFilm ;
+         rdfs:comment "one of the single parts into which a story is divided, especially when it is broadcast on the television or radio" ;
+         rdfs:label "Episode" .
+
+
+###  http://ceribouchetiflor.be/ontology#Genre
+:Genre rdf:type owl:Class ;
+       owl:disjointWith :Person ,
+                        :Profession ,
+                        :Show ;
+       rdfs:comment "a particular subject or style of literature, art, or music" ;
+       rdfs:label "Genre" .
+
+
+###  http://ceribouchetiflor.be/ontology#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :Show ;
+       owl:disjointWith :Serie ,
+                        :ShortFilm ;
+       rdfs:comment "a film shown in a cinema or on television and often telling a story" ;
+       rdfs:label "Movie" .
+
+
+###  http://ceribouchetiflor.be/ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :workedFor ;
+                          owl:someValuesFrom :Show
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :BirthYear ;
+                          owl:someValuesFrom xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :DeathYear ;
+                          owl:someValuesFrom xsd:dateTime
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :PersonName ;
+                          owl:someValuesFrom xsd:string
+                        ] ;
+        owl:disjointWith :Profession ,
+                         :Show ;
+        rdfs:comment "a person that was involved into any type of movie" ;
+        rdfs:label "person" .
+
+
+###  http://ceribouchetiflor.be/ontology#ProductiveActor
+:ProductiveActor rdf:type owl:Class ;
+                 rdfs:subClassOf :actor ;
+                 rdfs:comment "An actor that played in minimum 20 titles and acted with minimum 50 person" ;
+                 rdfs:label "productive actor" .
+
+
+###  http://ceribouchetiflor.be/ontology#Profession
+:Profession rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :ProfessionName ;
+                              owl:someValuesFrom xsd:string
+                            ] ;
+            owl:disjointWith :Show ;
+            rdfs:comment "The profession that a person made for a movie" ;
+            rdfs:label "Profession" .
+
+
+###  http://ceribouchetiflor.be/ontology#Serie
+:Serie rdf:type owl:Class ;
+       rdfs:subClassOf :Show ;
+       owl:disjointWith :ShortFilm ;
+       rdfs:comment "a set of television or radio broadcasts (titles) on the same subject or using the same characters but in different situations" ;
+       rdfs:label "Serie" .
+
+
+###  http://ceribouchetiflor.be/ontology#Show
+:Show rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGenre ;
+                        owl:someValuesFrom :Genre
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :average_rating ;
+                        owl:someValuesFrom owl:rational
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :endedOn ;
+                        owl:someValuesFrom xsd:dateTime
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isAdult ;
+                        owl:someValuesFrom xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :numberOfVotes ;
+                        owl:someValuesFrom xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :runtimeMinutes ;
+                        owl:someValuesFrom xsd:nonNegativeInteger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :startedOn ;
+                        owl:someValuesFrom xsd:dateTime
+                      ] ;
+      rdfs:comment "the name of a film, book, painting, piece of music, etc. (in our case the name + the attributes)" ;
+      rdfs:label "Show" .
+
+
+###  http://ceribouchetiflor.be/ontology#Writer
+:Writer rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :wrote ;
+                          owl:someValuesFrom :Show
+                        ] ;
+        rdfs:comment "A person who writes articles, books, films etc., to be published" ;
+        rdfs:label "Writer" .
+
+
+###  http://ceribouchetiflor.be/ontology#actor
+:actor rdf:type owl:Class ;
+       rdfs:subClassOf :Person ,
+                       [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                owl:onProperty :Played ;
+                                                owl:someValuesFrom :Character
+                                              ]
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty :actedIn ;
+                                                owl:someValuesFrom :Show
+                                              ]
+                                            ) ;
+                         rdf:type owl:Class
+                       ] ;
+       rdfs:comment "someone who pretends to be someone else while performing in a film, play, or television or radio programme" ;
+       rdfs:label "actor" .
+
+
+###  http://ceribouchetiflor.be/ontology#compositor
+:compositor rdf:type owl:Class ;
+            rdfs:subClassOf :Person ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :composedFor ;
+                              owl:someValuesFrom :Show
+                            ] ;
+            rdfs:comment "a person whose job is to arrange the letters, words, sentences, etc. of a book or a magazine before it is printed" ;
+            rdfs:label "Compositor" .
+
+
+###  http://ceribouchetiflor.be/ontology#director
+:director rdf:type owl:Class ;
+          rdfs:subClassOf :Person ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :directed ;
+                            owl:someValuesFrom :Show
+                          ] ;
+          rdfs:comment "a person who is in charge of a film or play and tells the actors how to play their parts" ;
+          rdfs:label "Director" .
+
+
+###  http://ceribouchetiflor.be/ontology#editor
+:editor rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :edited ;
+                          owl:someValuesFrom :Show
+                        ] ;
+        rdfs:comment "a person who corrects and make changes to texts or films before they are printed or shown, or a person who is in charge of a newspaper, magazine, etc., and is responsible for all of its reports" ;
+        rdfs:label "Editor" .
+
+
+###  http://ceribouchetiflor.be/ontology#ShortFilm
+:ShortFilm rdf:type owl:Class ;
+            rdfs:subClassOf :Show ;
+            rdfs:label "Short film" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

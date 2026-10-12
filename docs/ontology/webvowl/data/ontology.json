@@ -1,0 +1,1557 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "undefined" ],
+    "baseIris" : [ "http://www.w3.org/2002/07/owl", "http://www.w3.org/2000/01/rdf-schema", "http://ceribouchetiflor.be/ontology", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://ceribouchetiflor.be/ontology#"
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "21",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "29",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "31",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "47",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "50",
+    "type" : "owl:Class"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "53",
+    "type" : "owl:Class"
+  }, {
+    "id" : "54",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "56",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "57",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "18",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "63",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "61",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "34",
+    "type" : "owl:Class"
+  }, {
+    "id" : "76",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "owl:Class"
+  }, {
+    "id" : "75",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "79",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "70",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:Class"
+  }, {
+    "id" : "64",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "73",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "59",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "96",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "98",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "4",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "101",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "103",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "owl:Class"
+  }, {
+    "id" : "33",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "21",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "29",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "31",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Show",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Show",
+      "undefined" : "Show"
+    },
+    "subClasses" : [ "12", "33", "34", "11" ],
+    "comment" : {
+      "undefined" : "A thing that is displayed on the cinema/tv/streaming platform"
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "47",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "48",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "49",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Actor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Actor",
+      "undefined" : "Actor"
+    },
+    "comment" : {
+      "undefined" : "someone who pretends to be someone else while performing in a film, play, or television or radio programme"
+    },
+    "id" : "50",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "52",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Composer",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Composer",
+      "undefined" : "Composer"
+    },
+    "comment" : {
+      "undefined" : "a person whose job is to arrange the letters, words, sentences, etc. of a book or a magazine before it is printed"
+    },
+    "id" : "53",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "54",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "55",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "56",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "57",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "18",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "63",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#ShortFilm",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "ShortFilm",
+      "undefined" : "Short film"
+    },
+    "comment" : {
+      "undefined" : "a film that is not long enough to be considered a feature film"
+    },
+    "id" : "12",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Writer",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Writer",
+      "undefined" : "Writer"
+    },
+    "comment" : {
+      "undefined" : "A person who writes articles, books, films etc., to be published"
+    },
+    "id" : "8",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#editor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "editor",
+      "undefined" : "Editor"
+    },
+    "comment" : {
+      "undefined" : "a person who corrects and make changes to texts or films before they are printed or shown, or a person who is in charge of a newspaper, magazine, etc., and is responsible for all of its reports"
+    },
+    "id" : "61",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "71",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Movie",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Movie",
+      "undefined" : "Movie"
+    },
+    "comment" : {
+      "undefined" : "a film shown in a cinema or on television and often telling a story"
+    },
+    "id" : "34",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "76",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Genre",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Genre",
+      "undefined" : "Genre"
+    },
+    "comment" : {
+      "undefined" : "a particular subject or style of literature, art, or music"
+    },
+    "id" : "40"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "75",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "79",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Character",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Character",
+      "undefined" : "character"
+    },
+    "comment" : {
+      "undefined" : "a person represented in a film, play, or story:"
+    },
+    "id" : "70"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Profession",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Profession",
+      "undefined" : "Profession"
+    },
+    "comment" : {
+      "undefined" : "The profession that a person made for a movie"
+    },
+    "id" : "14"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Director",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Director",
+      "undefined" : "Director"
+    },
+    "comment" : {
+      "undefined" : "a person who is in charge of a film or play and tells the actors how to play their parts"
+    },
+    "id" : "83",
+    "superClasses" : [ "20" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "64",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Person",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "undefined" : "Person"
+    },
+    "subClasses" : [ "8", "50", "61", "53", "83" ],
+    "comment" : {
+      "undefined" : "a person that was involved into any type of movie"
+    },
+    "id" : "20"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "7",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "73",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "59",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "96",
+    "label" : {
+      "IRI-based" : "nonNegativeInteger"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "98",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "4",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "101",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "103",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Serie",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Serie",
+      "undefined" : "Serie"
+    },
+    "comment" : {
+      "undefined" : "a set of television or radio broadcasts (titles) on the same subject or using the same characters but in different situations"
+    },
+    "id" : "11",
+    "superClasses" : [ "1" ]
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#Episode",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Episode",
+      "undefined" : "Episode"
+    },
+    "comment" : {
+      "undefined" : "one of the single parts into which a story is divided, especially when it is broadcast on the television or radio"
+    },
+    "id" : "33",
+    "superClasses" : [ "1" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "3",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "13",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "22",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "23",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "30",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "32",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "37",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "38",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "39",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "41",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "42",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "43",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "44",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "45",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "46",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "51",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "65",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "66",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "67",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "68",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "77",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "78",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "80",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "81",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "82",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "84",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "85",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "86",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "88",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "89",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "90",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "91",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "92",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "93",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "94",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "95",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "99",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "104",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "105",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "106",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "107",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "108",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "109",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "110",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "111",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "112",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "113",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "114",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://ceribouchetiflor.be/ontology#isAdult",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "isAdult",
+      "undefined" : "isAdult"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "if the serie is a serie for adults or not"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#editedBy",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "editedBy",
+      "undefined" : "editedBy"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Indicates that a person edited some movie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#writtenBy",
+    "inverse" : "9",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "8",
+    "label" : {
+      "IRI-based" : "writtenBy",
+      "undefined" : "writtenBy"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "7",
+    "comment" : {
+      "undefined" : "Indicates that a person wrote some movie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "range" : "12",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "10"
+  }, {
+    "range" : "1",
+    "domain" : "14",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topObjectProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "topObjectProperty"
+    },
+    "domain" : "4",
+    "subproperty" : [ "5", "16" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#averageRating",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "averageRating",
+      "undefined" : "averageRating"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the average rating of the title"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#name",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "name",
+      "undefined" : "name"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "the name of someone or something"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "19"
+  }, {
+    "range" : "1",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#workedFor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "workedFor",
+      "undefined" : "worked for"
+    },
+    "domain" : "20",
+    "subproperty" : [ "24", "25", "9", "26", "27", "28" ],
+    "comment" : {
+      "undefined" : "Indicates that a person worked for a movie"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#BirthYear",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "BirthYear",
+      "undefined" : "BirthYear"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The Birthyear of a person"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#DeathYear",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "31",
+    "label" : {
+      "IRI-based" : "DeathYear",
+      "undefined" : "DeathYear"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The deathyear of a person"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#episodeOf",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "episodeOf",
+      "undefined" : "episodeOf"
+    },
+    "domain" : "33",
+    "comment" : {
+      "undefined" : "Indicates that an episode is part of a serie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "35"
+  }, {
+    "range" : "12",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "36"
+  }, {
+    "range" : "11",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "37"
+  }, {
+    "range" : "14",
+    "domain" : "20",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "38"
+  }, {
+    "range" : "14",
+    "domain" : "40",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#episodeOf",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "episodeOf",
+      "undefined" : "episodeOf"
+    },
+    "domain" : "33",
+    "comment" : {
+      "undefined" : "Indicates that an episode is part of a serie"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "41"
+  }, {
+    "range" : "20",
+    "domain" : "40",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "42"
+  }, {
+    "range" : "1",
+    "domain" : "40",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "range" : "12",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "34",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "11",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#workedWith",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "workedWith",
+      "undefined" : "workedWith"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "Indicates that a person worked with another person"
+    },
+    "attributes" : [ "symmetric", "object" ],
+    "id" : "51"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#startedOn",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "59",
+    "label" : {
+      "IRI-based" : "startedOn",
+      "undefined" : "startedOn"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "The date the serie started on"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#edited",
+    "inverse" : "3",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "edited",
+      "undefined" : "edited"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "61",
+    "comment" : {
+      "undefined" : "Indicates that a person edited some title"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#knows",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "knows",
+      "undefined" : "knows"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "20",
+    "subproperty" : [ "51" ],
+    "comment" : {
+      "undefined" : "to recognize someone or something"
+    },
+    "attributes" : [ "irreflexive", "symmetric", "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#actedIn",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "64",
+    "label" : {
+      "IRI-based" : "actedIn",
+      "undefined" : "actedIn"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "50",
+    "comment" : {
+      "undefined" : "Indicates that a person acted in a movie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#wrote",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "wrote",
+      "undefined" : "wrote"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "Indicates that a person wrote some title"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#hasGenre",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "hasGenre",
+      "undefined" : "hasGenre"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Indicates that a movie has some genre"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "66"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#endedOn",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "52",
+    "label" : {
+      "IRI-based" : "endedOn",
+      "undefined" : "endedOn"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the year the title ended on"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#episodeNumber",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "56",
+    "label" : {
+      "IRI-based" : "episodeNumber",
+      "undefined" : "episodeNumber"
+    },
+    "domain" : "33",
+    "comment" : {
+      "undefined" : "the number of the episode in the serie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "68"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#playedBy",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "playedBy",
+      "undefined" : "playedBy"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "Indicates that a character is played by a person"
+    },
+    "attributes" : [ "object" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#workedFor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "workedFor",
+      "undefined" : "worked for"
+    },
+    "domain" : "20",
+    "subproperty" : [ "24", "25", "9", "26", "27", "28" ],
+    "comment" : {
+      "undefined" : "Indicates that a person worked for a movie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#topDataProperty",
+    "baseIri" : "http://www.w3.org/2002/07/owl",
+    "range" : "73",
+    "label" : {
+      "IRI-based" : "topDataProperty"
+    },
+    "domain" : "4",
+    "attributes" : [ "datatype", "external" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#averageRating",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "75",
+    "label" : {
+      "IRI-based" : "averageRating",
+      "undefined" : "averageRating"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the average rating of the title"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#startedOn",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "71",
+    "label" : {
+      "IRI-based" : "startedOn",
+      "undefined" : "startedOn"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "The date the serie started on"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#runtimeMinutes",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "79",
+    "label" : {
+      "IRI-based" : "runtimeMinutes",
+      "undefined" : "runtimeMinutes"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the number of minutes the serie was running"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#numberOfVotes",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "76",
+    "label" : {
+      "IRI-based" : "numberOfVotes",
+      "undefined" : "numberOfVotes"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the number of imdb votes of the title"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#numberOfVotes",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "49",
+    "label" : {
+      "IRI-based" : "numberOfVotes",
+      "undefined" : "numberOfVotes"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the number of imdb votes of the title"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "81"
+  }, {
+    "range" : "20",
+    "domain" : "83",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "82"
+  }, {
+    "range" : "20",
+    "domain" : "50",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "84"
+  }, {
+    "range" : "20",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "85"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#directedBy",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "directedBy",
+      "undefined" : "directed by"
+    },
+    "superproperty" : [ "5" ],
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "Indicates that a person directed some movie"
+    },
+    "attributes" : [ "object" ],
+    "id" : "86"
+  }, {
+    "range" : "20",
+    "domain" : "53",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#isAdult",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "55",
+    "label" : {
+      "IRI-based" : "isAdult",
+      "undefined" : "isAdult"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "if the serie is a serie for adults or not"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "88"
+  }, {
+    "range" : "20",
+    "domain" : "61",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "89"
+  }, {
+    "range" : "1",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "90"
+  }, {
+    "range" : "1",
+    "domain" : "12",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "91"
+  }, {
+    "range" : "1",
+    "domain" : "11",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "92"
+  }, {
+    "range" : "1",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#appearsIn",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "appearsIn",
+      "undefined" : "appearsIn"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "Links a character to a show that it appears in."
+    },
+    "attributes" : [ "object" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#runtimeMinutes",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "runtimeMinutes",
+      "undefined" : "runtimeMinutes"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "the number of minutes the serie was running"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "95"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#knownFor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "knownFor",
+      "undefined" : "knownFor"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "Indicates that a person is known for some title"
+    },
+    "attributes" : [ "object" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#name",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "47",
+    "label" : {
+      "IRI-based" : "name",
+      "undefined" : "name"
+    },
+    "domain" : "4",
+    "comment" : {
+      "undefined" : "the name of someone or something"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#played",
+    "inverse" : "69",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "70",
+    "label" : {
+      "IRI-based" : "played",
+      "undefined" : "playedCharacter"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "Indicates that a person played some character"
+    },
+    "attributes" : [ "object" ],
+    "id" : "99"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#composedFor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "98",
+    "label" : {
+      "IRI-based" : "composedFor",
+      "undefined" : "composedFor"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "53",
+    "comment" : {
+      "undefined" : "Indicates that a person composed for some title"
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#DeathYear",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "63",
+    "label" : {
+      "IRI-based" : "DeathYear",
+      "undefined" : "DeathYear"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The deathyear of a person"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#directed",
+    "inverse" : "86",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "directed",
+      "undefined" : "directed"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "83",
+    "comment" : {
+      "undefined" : "Indicates that a person directed some title"
+    },
+    "attributes" : [ "object" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#edited",
+    "inverse" : "3",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "edited",
+      "undefined" : "edited"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "61",
+    "comment" : {
+      "undefined" : "Indicates that a person edited some title"
+    },
+    "attributes" : [ "object" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#category",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "103",
+    "label" : {
+      "IRI-based" : "category",
+      "undefined" : "category"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "the category of a character"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "102"
+  }, {
+    "range" : "1",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "104"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#employed",
+    "inverse" : "62",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "employed",
+      "undefined" : "employed"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "1",
+    "subproperty" : [ "6", "3", "86" ],
+    "comment" : {
+      "undefined" : "Indicates that a movie employed a Person"
+    },
+    "attributes" : [ "object" ],
+    "id" : "5"
+  }, {
+    "range" : "40",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "105"
+  }, {
+    "range" : "14",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "106"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#composedFor",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "composedFor",
+      "undefined" : "composedFor"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "53",
+    "comment" : {
+      "undefined" : "Indicates that a person composed for some title"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "107"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#directed",
+    "inverse" : "86",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "directed",
+      "undefined" : "directed"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "83",
+    "comment" : {
+      "undefined" : "Indicates that a person directed some title"
+    },
+    "attributes" : [ "someValues", "object" ],
+    "id" : "108"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#BirthYear",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "BirthYear",
+      "undefined" : "BirthYear"
+    },
+    "domain" : "20",
+    "comment" : {
+      "undefined" : "The Birthyear of a person"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "109"
+  }, {
+    "range" : "20",
+    "domain" : "70",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "110"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#wrote",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "wrote",
+      "undefined" : "wrote"
+    },
+    "superproperty" : [ "62" ],
+    "domain" : "8",
+    "comment" : {
+      "undefined" : "Indicates that a person wrote some title"
+    },
+    "attributes" : [ "object" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#name",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "101",
+    "label" : {
+      "IRI-based" : "name",
+      "undefined" : "name"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "the name of someone or something"
+    },
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "111"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#hasGenre",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "hasGenre",
+      "undefined" : "hasGenre"
+    },
+    "domain" : "1",
+    "comment" : {
+      "undefined" : "Indicates that a movie has some genre"
+    },
+    "attributes" : [ "object" ],
+    "id" : "112"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#seasonNumber",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "96",
+    "label" : {
+      "IRI-based" : "seasonNumber",
+      "undefined" : "seasonNumber"
+    },
+    "domain" : "33",
+    "comment" : {
+      "undefined" : "the number of the episode in the serie"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "113"
+  }, {
+    "iri" : "http://ceribouchetiflor.be/ontology#category",
+    "baseIri" : "http://ceribouchetiflor.be/ontology",
+    "range" : "54",
+    "label" : {
+      "IRI-based" : "category",
+      "undefined" : "category"
+    },
+    "domain" : "70",
+    "comment" : {
+      "undefined" : "the category of a character"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "114"
+  } ]
+}
